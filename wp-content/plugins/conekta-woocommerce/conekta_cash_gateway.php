@@ -7,9 +7,9 @@
      * Author  : Conekta.io
      * Url     : https://wordpress.org/plugins/conekta-woocommerce
      */
-    
-    class WC_Conekta_Cash_Gateway extends WC_Payment_Gateway
-    {
+
+class WC_Conekta_Cash_Gateway extends WC_Conekta_Plugin
+{
         protected $GATEWAY_NAME               = "WC_Conekta_Cash_Gateway";
         protected $usesandboxapi              = true;
         protected $order                      = null;
@@ -21,19 +21,21 @@
         
         public function __construct()
         {
-            $this->id              = 'ConektaCash';
+            $this->id              = 'conektacash';
+            $this->method_title       = __( 'Conekta Cash', 'woocommerce' );
             $this->has_fields      = true;            
             $this->init_form_fields();
             $this->init_settings();
             $this->title              = $this->settings['title'];
             $this->description        = '';
-            $this->icon 		      = $this->settings['alternate_imageurl'] ? $this->settings['alternate_imageurl']  : WP_PLUGIN_URL . "/" . plugin_basename( dirname(__FILE__)) . '/images/cash.png';
+            $this->icon               = $this->settings['alternate_imageurl'] ? $this->settings['alternate_imageurl']  : WP_PLUGIN_URL . "/" . plugin_basename( dirname(__FILE__)) . '/images/cash.png';
             $this->usesandboxapi      = strcmp($this->settings['debug'], 'yes') == 0;
-            $this->testApiKey 		  = $this->settings['test_api_key'  ];
-            $this->liveApiKey 		  = $this->settings['live_api_key'  ];
+            $this->testApiKey         = $this->settings['test_api_key'  ];
+            $this->liveApiKey         = $this->settings['live_api_key'  ];
             $this->secret_key         = $this->usesandboxapi ? $this->testApiKey : $this->liveApiKey;
             add_action('woocommerce_update_options_payment_gateways_' . $this->id , array($this, 'process_admin_options'));
             add_action( 'woocommerce_thankyou_' . $this->id, array( $this, 'thankyou_page' ) );
+            add_action( 'woocommerce_email_before_order_table', array( $this, 'email_instructions' ) );
             add_action( 'woocommerce_email_before_order_table', array( $this, 'email_barcode' ) );
             add_action( 'woocommerce_api_' . strtolower( get_class( $this ) ), array( $this, 'webhook_handler' ) );  
         }
@@ -42,22 +44,25 @@
         * Updates the status of the order.
         * Webhook needs to be added to Conekta account tusitio.com/wc-api/WC_Conekta_Cash_Gateway
         */
-	public function webhook_handler() 
-	{
-	    header('HTTP/1.1 200 OK');
-	    $body = @file_get_contents('php://input');		
-	    $event = json_decode($body);
-	    $charge = $event->data->object;
-	    $order_id = $charge->reference_id;
-	    $paid_at = date("Y-m-d", $charge->paid_at);
-	    $order = new WC_Order( $order_id );
-		if (strpos($event->type, "charge.paid") !== false) 
-		{
-			update_post_meta( $order->id, 'conekta-paid-at', $paid_at);
-			$order->payment_complete();
-			$order->add_order_note(sprintf("Payment completed in Oxxo and notification of payment received"));
-		}
-	}
+    public function webhook_handler() 
+    {
+        header('HTTP/1.1 200 OK');
+        $body = @file_get_contents('php://input');      
+        $event = json_decode($body);
+        $charge = $event->data->object;
+        $order_id = $charge->reference_id;
+        $paid_at = date("Y-m-d", $charge->paid_at);
+        $order = new WC_Order( $order_id );
+
+        if (strpos($event->type, "charge.paid") !== false) 
+        {
+            update_post_meta( $order->id, 'conekta-paid-at', $paid_at);
+            $order->payment_complete();
+            $order->add_order_note(sprintf("Payment completed in Oxxo and notification of payment received"));
+
+            parent::offline_payment_notification($order_id, $charge->details->name);
+        }
+    }
    
         public function init_form_fields()
         {
@@ -118,7 +123,8 @@
          */
         function thankyou_page($order_id) {
             $order = new WC_Order( $order_id );
-            echo '<p><strong>'.__('Código de Barra').':</strong> <img src="' . get_post_meta( $order->id, 'conekta-barcodeurl', true ). '" /></p>';
+
+            echo '<p><strong>'.__('Código de Barras').':</strong> <img src="' . get_post_meta( $order->id, 'conekta-barcodeurl', true ). '" /></p>';
             echo '<p><strong>'.__('Referencia').':</strong> ' . get_post_meta( $order->id, 'conekta-barcode', true ). '</p>';
         }
         
@@ -130,11 +136,11 @@
          */
         function email_barcode($order) {
 
-	    	if (get_post_meta( $order->id, 'conekta-barcodeurl', true ) != null)
-        	{
-            		echo '<strong>'.__('Código Barra').':</strong> <img src="' . get_post_meta( $order->id, 'conekta-barcodeurl', true ). '" />';
-            		echo '<p><strong>'.__('Referencia').':</strong> ' . get_post_meta( $order->id, 'conekta-barcode', true ). '</p>';
-        	}
+            if (get_post_meta( $order->id, 'conekta-barcodeurl', true ) != null)
+            {
+                    echo '<strong>'.__('Código Barra').':</strong> <img src="' . get_post_meta( $order->id, 'conekta-barcodeurl', true ). '" />';
+                    echo '<p><strong>'.__('Referencia').':</strong> ' . get_post_meta( $order->id, 'conekta-barcode', true ). '</p>';
+            }
         }
         
         /**
@@ -146,8 +152,9 @@
          * @param bool $plain_text
          */
         public function email_instructions( $order, $sent_to_admin, $plain_text = false ) {
-            if ( $this->instructions && 'on-hold' === $order->status ) {
-                echo wpautop( wptexturize( $this->instructions ) ) . PHP_EOL;
+            $instructions = $this->form_fields['instructions'];
+            if ( $instructions && 'on-hold' === $order->status ) {
+                echo wpautop( wptexturize( $instructions['default'] ) ) . PHP_EOL;
             }
         }
         
@@ -179,7 +186,7 @@
                             "amount"=> $data['amount'],
                             "currency"=> $data['currency'],
                             "reference_id" => $this->order->id,
-                            "description"=> "Recibo de pago para orden # ". $this->order->id,
+                            "description"=> "Recibo de pago para orden # ". $this->order->id . " desde Woocommerce v" . $this->version,
                             "cash"=> array(
                                 "type"=>"oxxo"
                             ),
@@ -232,7 +239,7 @@
                 if (version_compare($wp_version, '4.1', '>=')) {
                         wc_add_notice(__('Transaction Error: Could not complete the payment', 'woothemes'), $notice_type = 'error');
                 } else {
-                	$woocommerce->add_error(__('Transaction Error: Could not complete the payment'), 'woothemes');
+                    $woocommerce->add_error(__('Transaction Error: Could not complete the payment'), 'woothemes');
                 }
             }
         }

@@ -26,10 +26,28 @@ Powered by: Serviciosdinamicos.com.mx & Gubynetwork.com
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <div class="wrap container-fluid" role="document">
-      <div class="content row">
-	   
 	
+
+
+		<?php if ( is_front_page()  ) {
+			
+			 echo do_shortcode("[metaslider id=25]"); 
+			 include 'sec.php';
+			//echo "<img src='wp-content/uploads/2016/05/tiendahome.png' class='img-responsive' >";
+		}
+		?>
+	<?php if (is_shop()) {
+			
+			 //echo do_shortcode("[metaslider id=25]"); 
+			echo "<img src='../wp-content/uploads/2016/05/tiendahome.png' class='img-responsive'>";
+		}
+		?>
+ 
+		
+
+    <div class="wrap container-fluid" role="document">
+	
+		
 	  
         <main class="main">
           <?php include Wrapper\template_path(); ?>
@@ -40,11 +58,14 @@ Powered by: Serviciosdinamicos.com.mx & Gubynetwork.com
           </aside><!-- /.sidebar -->
         <?php endif; */?>
 
-    </div><!-- /.wrap -->
+
+	</div>
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');
       wp_footer();
     ?>
   </body>
+
+  <script src="<?php bloginfo( 'template_url' ); ?>/js/myjs.js"></script> 
 </html>

@@ -23,10 +23,6 @@ get_header( 'shop' );
 */
 ?>
 <!-- imagen pricipal, falta automatizar desde Wordpress -->
-	<div class="container-fluid imgtienda">
-		<img src="http://54.68.89.0/natural/wp-content/uploads/2016/05/tiendahome.png" class="img-responsive">
-		
-	</div>
 
 	<?php 
 		/**

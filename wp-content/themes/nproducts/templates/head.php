@@ -7,7 +7,7 @@
   <?php wp_head(); ?>
   
   <!--Incluye el Favicon-->
-  <link rel="icon" type="image/vnd.microsoft.icon" href="http://54.68.89.0/natural/wp-content/uploads/2016/05/favicon.ico" />
+  <link rel="icon" type="image/vnd.microsoft.icon" href="../wp-content/uploads/2016/05/favicon.ico" />
   
   <!--Incluye el css de bootstrap-->
   <!--
@@ -22,7 +22,7 @@
  
 
   <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/style.css">
-  <script src="<?php bloginfo( 'template_url' ); ?>/js/myjs.js"></script> 
-   
+  
+     <script src="<?php bloginfo( 'template_url' ); ?>/js/jquery-1.12.3.min.js"></script>
 </head>
  

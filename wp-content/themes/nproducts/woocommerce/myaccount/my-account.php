@@ -1,3 +1,12 @@
+<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="//v2.zopim.com/?449ebj7wXJQjByX7uhWghEQWA0D5rYei";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<!--End of Zopim Live Chat Script-->
 <?php
 /**
  * My Account page
@@ -22,14 +31,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 wc_print_notices(); ?>
 
 <p class="myaccount_user">
+<h3>Panel de control </h3>
 	<?php
 	printf(
-		__( 'Hello <strong>%1$s</strong> (not %1$s? <a href="%2$s">Sign out</a>).', 'woocommerce' ) . ' ',
-		$current_user->display_name,
+		__( '<h4>Hola <strong>%1$s</strong>.', 'woocommerce' ) . ' ',
+		$current_user->user_firstname,
 		wc_get_endpoint_url( 'customer-logout', '', wc_get_page_permalink( 'myaccount' ) )
 	);
 
-	printf( __( 'From your account dashboard you can view your recent orders, manage your shipping and billing addresses and <a href="%s">edit your password and account details</a>.', 'woocommerce' ),
+	printf( __( 'Este es tu panel de control, aquí podrás administrar tus detalles de facturación, dirección de envío, descargar tus notas y <a href="%s">
+	cambiar tu contraseña y detalles de tu cuenta</a>.</h4>', 'woocommerce' ),
 		wc_customer_edit_account_url()
 	);
 	?>
@@ -44,3 +55,11 @@ wc_print_notices(); ?>
 <?php wc_get_template( 'myaccount/my-address.php' ); ?>
 
 <?php do_action( 'woocommerce_after_my_account' ); ?>
+
+<?php
+	printf(
+		__( '<a href="%2$s">Cerrar Sesión</a>.', 'woocommerce' ) . ' ',
+		$current_user->display_name,
+		wc_get_endpoint_url( 'customer-logout', '', wc_get_page_permalink( 'myaccount' ) )
+	);
+	?>

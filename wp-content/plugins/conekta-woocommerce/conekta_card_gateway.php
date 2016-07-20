@@ -7,8 +7,7 @@
      * Author  : Cristina Randall
      * Url     : https://wordpress.org/plugins/conekta-woocommerce
      */
-   
-    class WC_Conekta_Card_Gateway extends WC_Payment_Gateway
+    class WC_Conekta_Card_Gateway extends WC_Conekta_Plugin
     {
         protected $GATEWAY_NAME               = "WC_Conekta_Card_Gateway";
         protected $usesandboxapi              = true;
@@ -19,10 +18,13 @@
         protected $conektaTestApiKey          = '';
         protected $conektaLiveApiKey          = '';
         protected $publishable_key            = '';
+
+        protected $lang_options               = array();
         
         public function __construct()
         {
-            $this->id              = 'ConektaCard';
+            $this->id              = 'conektacard';
+            $this->method_title       = __( 'Conekta Card', 'woocommerce' );
             $this->has_fields      = true;
             $this->init_form_fields();
             $this->init_settings();
@@ -38,9 +40,12 @@
             //$this->useUniquePaymentProfile = strcmp($this->settings['enable_unique_profile'], 'yes') == 0;
             $this->publishable_key    = $this->usesandboxapi ? $this->testPublishableKey : $this->livePublishableKey;
             $this->secret_key         = $this->usesandboxapi ? $this->testApiKey : $this->liveApiKey;
+
+            $this->lang_options = parent::set_locale_options()->get_lang_options();
+
             add_action('woocommerce_update_options_payment_gateways_' . $this->id , array($this, 'process_admin_options'));
             add_action('admin_notices'                              , array(&$this, 'perform_ssl_check'    ));
- 
+
         }        
         
         /**
@@ -148,7 +153,7 @@
                             "monthly_installments" => $data['monthly_installments'] > 1 ? $data['monthly_installments'] : null,
                             "card"        => $data['token'],
                             "reference_id" => $this->order->id,
-                            "description" => "Compra con orden # ". $this->order->id,
+                            "description" => "Compra con orden # ". $this->order->id . " desde Woocommerce v" . $this->version,
                             "details"     => $details,
                         ));
                 

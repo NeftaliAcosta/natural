@@ -38,7 +38,7 @@ msgid "View options"
 msgstr ""
 
 #: D:\xampp\htdocs\display-product.com\wp-content\plugins\displayProduct/displayProduct-shortcodes.php:478
-msgid "Add to cart"
+msgid "Comprar"
 msgstr ""
 
 #: D:\xampp\htdocs\display-product.com\wp-content\plugins\displayProduct/displayProduct-shortcodes.php:555

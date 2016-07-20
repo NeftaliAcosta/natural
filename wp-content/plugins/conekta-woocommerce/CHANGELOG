@@ -13,3 +13,8 @@
 * Enable or disable difered payments from the admin
 === 0.2.1 2015-06-15
 * Added additional parameters required for more robust anti-fraude service for card payments
+=== 0.3.0 2016-03-31
+* Added Banorte CEP and SPEI.
+=== 0.4.0 2016-06-30
+* Email notifications for offline payment methods
+* Support locale option

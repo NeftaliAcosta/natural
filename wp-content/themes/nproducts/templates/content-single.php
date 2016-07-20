@@ -1,3 +1,10 @@
+
+<div class="row myblog">
+
+<div class="col-xs-12 col-sm-8">
+ <img src="<?php echo the_post_thumbnail_url( 'full' ); ?>" class="img-responsive imgpost">
+ 
+ 
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
     <header>
@@ -10,6 +17,16 @@
     <footer>
       <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
     </footer>
-    <?php comments_template('/templates/comments.php'); ?>
+    <?php /*comments_template('/templates/comments.php'); */?> 
   </article>
 <?php endwhile; ?>
+
+
+</div>
+
+
+	<div class="col-xs-12 col-sm-4">
+		<?php dynamic_sidebar('sidebar-primary'); ?>
+	</div>
+
+</div>

@@ -3,7 +3,7 @@ Contributors: cristinarandall
 Tags: free, oxxo, conekta, mexico, payment gateway
 Requires at least: 3.5.2
 Tested up to: 4.2.2
-Stable tag: 0.2.1
+Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,5 +57,5 @@ Replace to tusitio.com with your domain name
 * Added option for difered payments for 3, 6, and 12 months
 * Enable or disable difered payments from the admin
 
-= 0.2.1 =
+= 0.3.0 =
 * Added additional parameters required for more robust anti-fraude service for card payments 

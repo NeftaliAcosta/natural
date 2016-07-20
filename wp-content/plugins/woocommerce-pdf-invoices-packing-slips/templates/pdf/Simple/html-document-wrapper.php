@@ -9,7 +9,5 @@
 </head>
 <body class="<?php echo $wpo_wcpdf->export->template_type; ?>">
 <?php echo $wpo_wcpdf->export->output_body; ?>
-
-
 </body>
 </html>

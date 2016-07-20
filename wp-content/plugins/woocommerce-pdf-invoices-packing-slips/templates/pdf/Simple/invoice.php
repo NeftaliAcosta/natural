@@ -13,6 +13,7 @@
 		<td class="shop-info">
 			<div class="shop-name"><h3><?php $wpo_wcpdf->shop_name(); ?></h3></div>
 			<div class="shop-address"><?php $wpo_wcpdf->shop_address(); ?></div>
+			
 		</td>
 	</tr>
 </table>
@@ -34,6 +35,7 @@
 			<?php if ( isset($wpo_wcpdf->settings->template_settings['invoice_phone']) ) { ?>
 			<div class="billing-phone"><?php $wpo_wcpdf->billing_phone(); ?></div>
 			<?php } ?>
+			<?php $wpo_wcpdf->custom_field('_billing_myfield12', 'RFC:', true); ?>
 		</td>
 		<td class="address shipping-address">
 			<?php if ( isset($wpo_wcpdf->settings->template_settings['invoice_shipping_address']) && $wpo_wcpdf->ships_to_different_address()) { ?>
@@ -55,7 +57,7 @@
 					<th><?php _e( 'Invoice Date:', 'wpo_wcpdf' ); ?></th>
 					<td><?php $wpo_wcpdf->invoice_date(); ?></td>
 				</tr>
-				<?php $wpo_wcpdf->custom_field('_billing_myfield12', 'RFC:', true); ?>
+				
 				<?php } ?>
 				<tr class="order-number">
 					<th><?php _e( 'Order Number:', 'wpo_wcpdf' ); ?></th>
@@ -139,4 +141,3 @@
 	<?php $wpo_wcpdf->footer(); ?>
 </div><!-- #letter-footer -->
 <?php endif; ?>
-

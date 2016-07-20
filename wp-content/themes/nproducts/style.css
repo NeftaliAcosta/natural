@@ -12,7 +12,7 @@ License URI:        http://opensource.org/licenses/MIT
 */
 
 
-
+/*displayprodct/include/dp-field*/
 
 body{
 	
@@ -181,10 +181,11 @@ color: #00c8c8;
 .seccion3{
 	  background-image: url(imgs/bgdiv.png);
 	   background-position: 50% 0%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 500px;
-        color: white;
+       background-repeat: no-repeat;
+       background-size: cover;
+       height: 500px;
+	   width:100%!important;
+       color: white;
 }
 
 
@@ -287,12 +288,16 @@ input:-moz-placeholder { color:#FFFFFF; }
         left: 0;
         width: 100% !important;
         height: 100% !important;
+		pointer-events:none; 
+		border:0;
     }
 
 .footer{
 	
 		height:80px;
 		background-color:#00c8c8;
+		position:absolute; 
+		bottom:0; 
 }
 
 
@@ -610,9 +615,12 @@ li.mmprimas a{
 
 .mycontent ul li{
 	list-style-type: circle;
+	font-size: 1.32em;
 }
 
-
+.mycontent p{
+	font-size: 1.32em;
+}
 
 li.cptm{
 	background: url("imgs/ptm2.png"); 
@@ -635,7 +643,7 @@ div.products a img{
 }
 
 .ptienda{
-	width: 970px!important;
+	width: 90%!important;
 }
 
 wc-tabs-wrapper{
@@ -645,6 +653,7 @@ wc-tabs-wrapper{
 
 main{
     width: 90%;
+	max-height:100%!important;
     margin: 0 auto;
     margin-top: 20px;
 }
@@ -658,3 +667,76 @@ main{
 .dp-sorter{
 	display:none!important;
 }
+
+.ml-slider{
+	max-width:100%!important;
+}
+
+.sintilla{
+	width:75%;
+	margin:0 auto;
+}
+
+.dp-col {
+    background: #FFFFFF!important;
+    border: 3px solid #F5f5f5!important;
+}
+
+.dp_images{
+	margin-top:30px!important;
+}
+
+mybuttom a{
+
+    color: #000000!important;
+	
+}
+ 
+ .dp-product-image{
+	 text-align:center!important;
+ }
+  
+.dp-grid-price, .dp-price, .dp-grid-price a, .dp-price a{
+	 color:#000000!important;
+ }
+ .woocommerce a.button .alt{
+	background-color: #00c8c8!important;
+ }
+ .woocommerce a.button.alt:hover{
+	background-color: #f5f5f5!important;
+	color:#000000!important;
+ }
+ 
+ .imgpost{
+	 margin:0 auto;
+ }
+ 
+ /*Productos*/
+ 
+ .wc-tabs, #tab-description{
+	 display:none!important;
+ }
+ 
+ .alt {
+	 background-color: #00c8c8!important;
+ }
+ 
+ .my_account_orders{
+	 font-size: 1em!important;
+ }
+ /*end productos*/
+ 
+ 
+ .jp-relatedposts{
+	 display:none!important;
+ }
+ 
+ .entry-content p{
+	 font-size: 1.32em;
+ }
+ a:hover{
+	 text-decoration:none!important;
+ }
+ 
+ 
+	

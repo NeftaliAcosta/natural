@@ -1,4 +1,4 @@
-Conekta Woocommerce v.0.2.1
+Conekta Woocommerce v.0.4.0
 =======================
 
 WooCommerce Payment Gateway for Conekta.io
@@ -19,12 +19,13 @@ Current version features:
 * Sandbox testing capability.
 * Automatic order status management
 * Email notifications on successful purchase
+* Email notifications on successful in cash payment
 
 ![alt tag](https://raw.github.com/cristinarandall/conekta-woocommerce/master/readme_files/email.png)
 
 Version Compatibility
 ---------------------
-This plugin has been tested on Wordpress 3.5.2  WooCommerce 2.0.13
+This plugin has been tested on Wordpress 4.5.3  WooCommerce 2.6.1
 
 Installation
 -----------

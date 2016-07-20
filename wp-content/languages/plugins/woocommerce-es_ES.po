@@ -2,13 +2,49 @@
 # This file is distributed under the same license as the Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-06-30 18:14:57+0000\n"
+"PO-Revision-Date: 2016-07-18 10:36:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/2.1.0-alpha\n"
 "Project-Id-Version: Stable (latest release)\n"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:110
+msgid "Endpoints are appended to your page URLs to handle specific actions on the accounts pages. They should be unique and can be left blank to disable the endpoint."
+msgstr "Las variables se añaden a las URLs de tu página para manejar acciones específicas en las páginas de cuentas. Deberían ser únicas y pueden dejarse en blanco para desactivar la variable. "
+
+#: includes/admin/settings/class-wc-settings-shipping.php:244
+#: includes/admin/settings/views/html-admin-page-shipping-zones.php:52
+msgid "No shipping methods offered to this zone."
+msgstr "No hay métodos de envío para esta zona."
+
+#: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:101
+#: includes/admin/settings/views/html-admin-page-shipping-zones.php:149
+msgid "Choose the shipping method you wish to add. Only shipping methods which support zones are listed."
+msgstr "Elige el método de envío que desees añadir. Solo se muestran los métodos de envío compatibles con zonas."
+
+#: includes/admin/settings/views/html-admin-page-shipping-zones.php:39
+msgid "This zone is used for shipping addresses that aren&lsquo;t included in any other shipping zone. Adding shipping methods to this zone is optional."
+msgstr "Esta zona se utiliza para las direcciones de envío que no estén incluidas en ninguna otra zona de envío. Añadir métodos de envío a esta zona es opcional."
+
+#: includes/admin/views/html-admin-page-status-tools.php:34
+msgid "Enable Shipping Debug Mode to show matching shipping zones and to bypass shipping rate cache."
+msgstr "Activa el modo de depuración de envío para mostrar las zonas de envío y saltarte la cache de la tasa de envío."
+
+#: includes/admin/views/html-admin-page-status-tools.php:45
+msgid "Enable Template Debug Mode to bypass all theme and plugin template overrides for logged-in administrators. Used for debugging purposes."
+msgstr "Activa el modo de depuración de plantilla para saltarte todas las anulaciones de plantilla de plugins y temas para administradores conectados. Se usa por cuestiones de depuración."
+
+#: includes/api/legacy/v2/class-wc-api-products.php:1802
+#: includes/api/legacy/v3/class-wc-api-products.php:2358
+#: includes/cli/class-wc-cli-product.php:2022 includes/wc-rest-functions.php:68
+msgid "Error: %s."
+msgstr "Error: %s."
+
+#: includes/class-wc-shipping-zone.php:226
+msgid "Everywhere"
+msgstr "En todas partes"
 
 #: includes/shipping/flat-rate/includes/settings-flat-rate.php:7
 msgid "Use <code>[qty]</code> for the number of items, <br/><code>[cost]</code> for the total cost of items, and <code>[fee percent=\"10\" min_fee=\"20\" max_fee=\"\"]</code> for percentage based fees."
@@ -4228,6 +4264,10 @@ msgstr[1] "%s descargas pendientes"
 #: templates/myaccount/my-orders.php:30
 msgid "Recent Orders"
 msgstr "Pedidos recientes"
+
+#: includes/api/class-wc-rest-orders-controller.php:1163
+msgid "Order number."
+msgstr "Número de pedido."
 
 #: templates/myaccount/my-orders.php:65 templates/myaccount/orders.php:61
 msgid "%s for %s item"
@@ -8534,7 +8574,7 @@ msgstr "Soporte WooCommerce"
 
 #: includes/admin/views/html-admin-page-status-report.php:702
 msgid "Displays whether or not the current active theme declares WooCommerce support."
-msgstr "Muestra si el tema activo corriente declara apoyo WooCommerce."
+msgstr "Muestra si el tema activo actual es compatible con WooCommerce."
 
 #: includes/admin/views/html-admin-page-status-report.php:705
 msgid "Not Declared"
@@ -8711,7 +8751,7 @@ msgstr "Aprende más sobre las plantillas"
 
 #: includes/admin/views/html-notice-theme-support.php:14
 msgid "<strong>Your theme does not declare WooCommerce support</strong> &#8211; Please read our %sintegration%s guide or check out our %sStorefront%s theme which is totally free to download and designed specifically for use with WooCommerce."
-msgstr "<strong>Su tema no declara apoyo la Tienda WooCommerce</strong> - Por favor lee nuestra guía de integración o echa un vistazo a nuestro tema%sStorefront%s, que es totalmente gratuito de descarga y diseñado específicamente para su uso con la Tienda :)"
+msgstr "<strong>Tu tema no parece ser compatible con WooCommerce</strong> - Por favor lee nuestra %sguía de integración%s o echa un vistazo a nuestro tema%sStorefront%s, que es de descarga totalmente gratuita y diseñado específicamente para usarlo con WooCommerce."
 
 #: includes/admin/views/html-notice-theme-support.php:16
 msgid "Read More About Storefront"
@@ -10044,7 +10084,7 @@ msgstr "Mostrar el inventario solo cuando es bajo. Ejemplo: \"Solo quedan 2 exis
 
 #: includes/admin/settings/class-wc-settings-products.php:348
 msgid "Never show stock amount"
-msgstr "No mostrar la cantidad del inventario"
+msgstr "No mostrar nunca la cantidad de inventario"
 
 #: includes/admin/settings/class-wc-settings-products.php:369
 msgid "File Download Method"
@@ -10595,7 +10635,7 @@ msgstr "Explorar todas las extensiones"
 
 #: includes/admin/class-wc-admin-addons.php:114
 msgid "Need a theme? Try Storefront"
-msgstr "¿Necesita un tema? Prueba Storefront"
+msgstr "¿Necesitas un tema? Prueba Storefront"
 
 #: includes/admin/views/html-admin-page-addons.php:45
 msgid "Our catalog of WooCommerce Extensions can be found on WooThemes.com here: <a href=\"%s\">WooCommerce Extensions Catalog</a>"
@@ -12390,6 +12430,10 @@ msgstr "Valor del cupón."
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:73
 msgid "Allow free shipping"
 msgstr "Permitir el envío gratuito"
+
+#: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:73
+msgid "Check this box if the coupon grants free shipping. A <a href=\"%s\">free shipping method</a> must be enabled in your shipping zone and be set to require \"a valid free shipping coupon\" (see the \"Free Shipping Requires\" setting)."
+msgstr "Marca esta casilla si el cupón ofrece envío gratuito. El <a href=\"%s\">método de envío gratuito</a> debe estar activo y tener también seleccionado \"un cupón de envío gratuito\" (ver los ajustes de \"El envío gratuito requiere\")."
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:76
 msgid "Coupon expiry date"

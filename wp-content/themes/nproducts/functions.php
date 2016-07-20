@@ -72,3 +72,12 @@ function woocommerce_support() {
 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
+
+
+//Quitar productos relacionados
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);

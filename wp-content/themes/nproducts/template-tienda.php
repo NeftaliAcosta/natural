@@ -14,4 +14,3 @@ asdas
   <?php get_template_part('templates/page', 'header'); ?>
   <?php get_template_part('templates/content', 'page'); ?>
 <?php endwhile; ?>
-<img src="<?php the_field('tiendahome'); ?>" class="img-responsive">
