@@ -23,8 +23,13 @@ p{
 	font-size: 1em;
 }
 
+.bssingleproduct li, .page li {
+  list-style-type:disc;
+}
 
-
+a{
+	text-decoration:none;
+}
 /* maquetamos el menÃº*/
 
 
@@ -699,7 +704,7 @@ mybuttom a{
 .dp-grid-price, .dp-price, .dp-grid-price a, .dp-price a{
 	 color:#000000!important;
  }
- .woocommerce a.button .alt{
+ .woocommerce a.button {
 	background-color: #00c8c8!important;
  }
  .woocommerce a.button.alt:hover{
@@ -717,7 +722,7 @@ mybuttom a{
 	 display:none!important;
  }
  
- .alt {
+.woocommerce .button.alt {
 	 background-color: #00c8c8!important;
  }
  
@@ -727,9 +732,6 @@ mybuttom a{
  /*end productos*/
  
  
- .jp-relatedposts{
-	 display:none!important;
- }
  
  .entry-content p{
 	 font-size: 1.32em;
@@ -738,5 +740,9 @@ mybuttom a{
 	 text-decoration:none!important;
  }
  
- 
-	
+ .dp-col img {
+    max-width: 100%;
+    height: 200px!important;
+    border: 0;
+    box-shadow: none;
+}

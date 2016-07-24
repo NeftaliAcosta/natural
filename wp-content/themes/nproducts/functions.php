@@ -81,3 +81,10 @@ remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wra
 
 //Quitar productos relacionados
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+//Agregar soporte a logo Jetpack 
+add_theme_support( 'site-logo' ); 
+// Create a custom image size for Site Logo.
+
+
+

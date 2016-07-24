@@ -32,5 +32,8 @@ if (post_password_required()) {
     </div>
   <?php endif; ?>
 
-  <?php comment_form(); ?>
+  <?php /*comment_form(); */?>
+  
+  <!--modificaciones del formulario de contacto--->
+
 </section>

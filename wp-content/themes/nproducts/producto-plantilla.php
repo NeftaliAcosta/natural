@@ -7,6 +7,7 @@
 
 
 <div class="container">
+<div id="myxs" class="hidden-xs"></div>
 <div class="row">
 			
 			<div class="col-lg-4" >

@@ -13,7 +13,6 @@
 		<td class="shop-info">
 			<div class="shop-name"><h3><?php $wpo_wcpdf->shop_name(); ?></h3></div>
 			<div class="shop-address"><?php $wpo_wcpdf->shop_address(); ?></div>
-			
 		</td>
 	</tr>
 </table>
@@ -57,7 +56,6 @@
 					<th><?php _e( 'Invoice Date:', 'wpo_wcpdf' ); ?></th>
 					<td><?php $wpo_wcpdf->invoice_date(); ?></td>
 				</tr>
-				
 				<?php } ?>
 				<tr class="order-number">
 					<th><?php _e( 'Order Number:', 'wpo_wcpdf' ); ?></th>

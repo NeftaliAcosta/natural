@@ -22,6 +22,7 @@
 						  <span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>"><img src="<?php bloginfo( 'template_url' ); ?>/logo.png" alt="logo natural producs international" class="img-responsive mylogo"></a>
+						<?php /*if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); */?>
 					  </div>
 					  
 						<div class="collapse navbar-collapse navbar-ex1-collapse" id="navbar-collapse-3">

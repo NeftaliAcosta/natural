@@ -2,78 +2,30 @@ $(document).ready(function() {
 	
 
 	if (((window.location.pathname)=='/natural/jugo-green/' ) || ((window.location.pathname)=='/natural/revestarandano/' ) || ((window.location.pathname)=='/natural/noni/' ) || ((window.location.pathname)=='/natural/vitaforce/') || ((window.location.pathname)=='/natural/vitaforce-kids/' ) || ((window.location.pathname)=='/natural/natural-fiber/') || ((window.location.pathname)=='/natural/calcio-de-coral/' ) || ((window.location.pathname)=='/natural/alpiste/' ) ){
-	
-		$('#ProductoTerminado').fadeIn('show');
-		
+		if($('#myxs').is(':hidden')){
+			/*No mostrar el toogle*/
+		}
+		else{
+			$('#ProductoTerminado').fadeIn('show');
+		}
 	}
-	else if((window.location.pathname)=='/natural/nosotros/'  || (window.location.pathname)=='/natural/servicios/' ){
-		$('#MateriasPrimas').fadeIn('show');
-		$('#ProductoTerminado').fadeIn('show');	
+	else if((window.location.pathname)=='/natural/nosotros/'  || (window.location.pathname)=='/natural/servicios/' || (window.location.pathname)=='/natural/certificaciones/' ){
+		if($('#myxs').is(':hidden')){
+			/*No mostrar el toogle*/
+		}
+		else{
+			/*$('#MateriasPrimas').toggle('show');
+			$('#ProductoTerminado').toggle('show');
+			*/
+		}			
 	}
-	else if($('.myxs').is(':hidden')){
-		
-		 $('#Menu1').click(function(){
-				$('#MateriasPrimas').toggle('hide');
-				 
-				
-		 });
-		 
-		  $('#Menu2').click(function(){
-				$('#ProductoTerminado').toggle('hide');
-
-				
-		 });
+	else if($('#myxs').is(':hidden')){
+		/*No mostrar el toogle*/
 	}
 	else{
 			
 		$('#MateriasPrimas').fadeIn('show');
-		$('#collapse1').fadeIn('show');
 	}
-	
-	/*else{
-		$('#MateriasPrimas').fadeIn('show');
-		$('#ProductoTerminado').toggle('hide');
-	}
-	
-	/*
-
-    if($('.myxs').is(':hidden')){
-		
-		 $('#Menu1').click(function(){
-				$('#MateriasPrimas').toggle('slow');
-				 
-				
-		 });
-		 
-		  $('#Menu2').click(function(){
-				$('#ProductoTerminado').toggle('slow');
-
-				
-		 });
-	}
-
-		$('#MateriasPrimas').fadeIn('show');
-		 
-		 $('#Menu1').click(function(){
-				$('#MateriasPrimas').toggle('slow');
-				 
-				
-		 });
-		 
-		 
-		 $('#Menu2').click(function(){
-				$('#ProductoTerminado').toggle('slow');
-				$('#MateriasPrimas').toggle('hide');
-				
-		 });
-
-	
-	
-	
-	*/
-
-
-
 	
 	
 	
