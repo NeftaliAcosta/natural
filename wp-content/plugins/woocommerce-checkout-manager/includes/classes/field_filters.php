@@ -414,6 +414,8 @@ function wooccm_checkout_field_state_handler( $field = '', $key, $args, $value )
 		$after = '';
 	}
 
+	$args['class'][] = 'address-field';
+
 	if( $args['wooccm_required'] ) {
 		$args['class'][] = 'validate-required';
 		$required = ' <abbr class="required" title="' . esc_attr__( 'required', 'woocommerce-checkout-manager'  ) . '">*</abbr>';
@@ -532,6 +534,8 @@ function wooccm_checkout_field_country_handler( $field = '', $key, $args, $value
 	} else {
 		$after = '';
 	}
+
+	$args['class'][] = 'address-field';
 
 	if( $args['wooccm_required'] ) {
 		$args['class'][] = 'validate-required';

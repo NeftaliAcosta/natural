@@ -1,15 +1,15 @@
 $(document).ready(function() {
 	
 
-	if (((window.location.pathname)=='/natural/jugo-green/' ) || ((window.location.pathname)=='/natural/revestarandano/' ) || ((window.location.pathname)=='/natural/noni/' ) || ((window.location.pathname)=='/natural/vitaforce/') || ((window.location.pathname)=='/natural/vitaforce-kids/' ) || ((window.location.pathname)=='/natural/natural-fiber/') || ((window.location.pathname)=='/natural/calcio-de-coral/' ) || ((window.location.pathname)=='/natural/alpiste/' ) ){
+	if (((window.location.pathname)=='/jugo-green/' ) || ((window.location.pathname)=='/revestarandano/' ) || ((window.location.pathname)=='/noni/' ) || ((window.location.pathname)=='/vitaforce/') || ((window.location.pathname)=='/vitaforce-kids/' ) || ((window.location.pathname)=='/natural-fiber/') || ((window.location.pathname)=='/calcio-de-coral/' ) || ((window.location.pathname)=='/alpiste/' ) ){
 		if($('#myxs').is(':hidden')){
 			/*No mostrar el toogle*/
 		}
-		else{
+		else{ 
 			$('#ProductoTerminado').fadeIn('show');
 		}
 	}
-	else if((window.location.pathname)=='/natural/nosotros/'  || (window.location.pathname)=='/natural/servicios/' || (window.location.pathname)=='/natural/certificaciones/' ){
+	else if((window.location.pathname)=='/nosotros/'  || (window.location.pathname)=='/servicios/' || (window.location.pathname)=='/ertificaciones/' ){
 		if($('#myxs').is(':hidden')){
 			/*No mostrar el toogle*/
 		}

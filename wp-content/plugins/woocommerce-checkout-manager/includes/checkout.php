@@ -461,14 +461,14 @@ function wooccm_remove_fields_filter_billing( $fields ){
 		$multiCategoriesx = ( isset( $options['checkness']['productssave'] ) ? $options['checkness']['productssave'] : '' );
 		$multiCategoriesArrayx = explode(',',$multiCategoriesx);
 
-		if( in_array($values['product_id'],$multiCategoriesArrayx) && ($woocommerce->cart->cart_contents_count < 2) ) {
-			unset($fields['billing']['billing_address_1']);
-			unset($fields['billing']['billing_address_2']);
-			unset($fields['billing']['billing_phone']);
-			unset($fields['billing']['billing_country']);
-			unset($fields['billing']['billing_city']);
-			unset($fields['billing']['billing_postcode']);
-			unset($fields['billing']['billing_state']);
+		if( in_array( $values['product_id'],$multiCategoriesArrayx ) && ( $woocommerce->cart->cart_contents_count < 2 ) ) {
+			unset( $fields['billing']['billing_address_1'] );
+			unset( $fields['billing']['billing_address_2'] );
+			unset( $fields['billing']['billing_phone'] );
+			unset( $fields['billing']['billing_country'] );
+			unset( $fields['billing']['billing_city'] );
+			unset( $fields['billing']['billing_postcode'] );
+			unset( $fields['billing']['billing_state'] );
 			break;
 		}
 

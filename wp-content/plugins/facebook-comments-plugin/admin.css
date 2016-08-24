@@ -34,16 +34,14 @@
 }
 
 .pea_admin_main_wrap {}
-.pea_admin_main_left {
-    float: left;
-    width: 700px;
-    padding: 0 10px 0 6px;
+.pea_admin_main {
+    padding: 0 20px 0 0;
 }
-.pea_admin_main_right {
+/*.pea_admin_main_right {
     padding:0 20px 0 10px;
     float: left;
     width: 250px;
-}
+}*/
 .pea_admin_clear {clear:both;}
 .pea_admin_fl {float:left}
 

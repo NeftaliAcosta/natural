@@ -729,7 +729,8 @@ function woooccm_restrict_manage_posts() {
 		'city',
 		'state',
 		'postcode',
-		'email','phone'
+		'email',
+		'phone'
 	);
 	$shipping = array(
 		'country',

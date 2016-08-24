@@ -42,7 +42,7 @@
 					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 imgs iconos">
 				<div class="col-lg-6">
 								<div class="">
-								<img src="http://naturalproducts.com.mx/img/icon1.png" alt="desarrollo personalizados" class="img-responsive icon" />
+								<img src="<?php bloginfo( 'template_url' ); ?>/imgs/icon1.png" alt="desarrollo personalizados" class="img-responsive icon" />
 								</div>
 							</div>
 							<div class="col-lg-6 txt">
@@ -54,7 +54,7 @@
 							
 							<div class="col-lg-6">
 								<div class="">
-								<img src="http://naturalproducts.com.mx/img/icon2.png" alt="código de ética" class="img-responsive icon" />
+								<img src="<?php bloginfo( 'template_url' ); ?>/imgs/icon2.png" alt="código de ética" class="img-responsive icon" />
 								</div>
 							</div>
 							<div class="col-lg-6 txt">
@@ -69,7 +69,7 @@
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 imgs">
 				<div class="col-lg-6">
 								<div class="">
-								<img src="http://naturalproducts.com.mx/img/icon3.png" alt="download center" class="img-responsive icon" />
+								<img src="<?php bloginfo( 'template_url' ); ?>/imgs/icon3.png" alt="download center" class="img-responsive icon" />
 								</div>
 							</div>
 							<div class="col-lg-6 txt">
@@ -84,7 +84,7 @@
 							
 							<div class="col-lg-6">
 								<div class="">
-								<img src="http://naturalproducts.com.mx/img/icon4.png" alt="satisfaccion total" class="img-responsive icon" />
+								<img src="<?php bloginfo( 'template_url' ); ?>/imgs/icon4.png" alt="satisfaccion total" class="img-responsive icon" />
 								</div>
 							</div>
 							<div class="col-lg-6 txt">

@@ -1,7 +1,11 @@
 <?php get_template_part('templates/page', 'header'); ?>
 
-<div class="alert alert-warning">
-  <?php _e('Sorry, but the page you were trying to view does not exist.', 'sage'); ?>
-</div>
-
-<?php get_search_form(); ?>
+<div class="container-flouid seccion3">
+			<div class="container">
+			<div class="txtsecc3">
+				<h1>Error <strong> 404</strong></h1>
+				<p>La URL que está buscando no se encuentra disponible  :(
+				</p>
+			</div>
+			</div>
+</div><br>

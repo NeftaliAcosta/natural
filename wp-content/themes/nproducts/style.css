@@ -23,10 +23,11 @@ p{
 	font-size: 1em;
 }
 
+/*
 .bssingleproduct li, .page li {
   list-style-type:disc;
 }
-
+*/  
 a{
 	text-decoration:none;
 }
@@ -534,15 +535,18 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 		
 }
 .seccion3{
-	  background-image: url(img/bgdiv.png);
+	  background-image: url(imgs/bgdiv.png);
 	   background-position: 50% 0%;
         background-repeat: no-repeat;
         background-size: cover;
+		
         height: 300px;
         color: white;
 }
+.seccion3 p{
+	font-size: 0.9em;
 }
-
+ 
 @media (max-width: 768px){
 	.icon{
 
@@ -734,15 +738,38 @@ mybuttom a{
  
  
  .entry-content p{
-	 font-size: 1.32em;
+	 font-size: 1.1em;
  }
  a:hover{
 	 text-decoration:none!important;
  }
  
  .dp-col img {
-    max-width: 100%;
+    max-width: 100%!important;
     height: 200px!important;
     border: 0;
     box-shadow: none;
+}
+
+.dp-img-wrapper img {
+    width: 50%!important;
+}
+
+/*
+iframe{
+	display:none!important;
+}
+*/
+.noactive a{ 
+    background-color: transparent!important;
+    color: #00c8c8!important;
+}  
+
+ul li #menu-item-519 a{
+	 background-color: transparent!important;
+    color: #00c8c8!important;
+} 
+
+.fb .comments-count{
+	display:none;
 }

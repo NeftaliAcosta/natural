@@ -4,8 +4,8 @@ Contributors: visser, visser.labs, Emark
 Donate link: https://www.visser.com.au/donations/
 Tags: woocommerce, ecommerce, e-commerce, store, cart, checkout, manager, editor, field, shipping, billing, order
 Requires at least: 3.0
-Tested up to: 4.5.2
-Stable tag: 4.0.8
+Tested up to: 4.6
+Stable tag: 4.0.9
 License: GPLv2 or later
 
 Manages WooCommerce Checkout, the advanced way.
@@ -138,6 +138,7 @@ Example:
 = 4.0.9 =
 * Added: ID to custom fields on Edit Order screen
 * Added: Hover state to custom fields on Edit Order screen
+* Fixed: Shipping Methods not updating at Checkout
 
 = 4.0.8 =
 * Fixed: PHP notice on Checkout screen

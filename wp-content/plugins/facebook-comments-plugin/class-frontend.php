@@ -21,39 +21,7 @@ function fbgraphinfo() {
 		echo '<meta property="fb:admins" content="'.$options['mods'].'"/>';
 	}
 }
-function fbstats() {
-    echo <<< EOT
-<script type="text/javascript">
-!function(t,e,s){"use strict";function a(t){t=t||{};var e="https://track.atom-data.io/",s="1.0.1";this.options={endpoint:!!t.endpoint&&t.endpoint.toString()||e,apiVersion:s,auth:t.auth?t.auth:""}}function n(t,e){this.endpoint=t.toString()||"",this.params=e||{},this.headers={contentType:"application/json;charset=UTF-8"},this.xhr=XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("Microsoft.XMLHTTP")}function r(t,e,s){this.error=t,this.response=e,this.status=s}t.IronSourceAtom=a,a.prototype.putEvent=function(t,e){if(t=t||{},!t.table)return e("Stream is required",null);if(!t.data)return e("Data is required",null);t.apiVersion=this.options.apiVersion,t.auth=this.options.auth;var s=new n(this.options.endpoint,t);return t.method&&"GET"===t.method.toUpperCase()?s.get(e):s.post(e)},a.prototype.putEvents=function(t,e){if(t=t||{},!t.table)return e("Stream is required",null);if(!(t.data&&t.data instanceof Array&&t.data.length))return e("Data (must be not empty array) is required",null);t.apiVersion=this.options.apiVersion,t.auth=this.options.auth;var s=new n(this.options.endpoint+"/bulk",t);return t.method&&"GET"===t.method.toUpperCase()?s.get(e):s.post(e)},a.prototype.health=function(t){var e=new n(this.options.endpoint,{table:"health_check",data:"null"});return e.get(t)},"undefined"!=typeof module&&module.exports&&(module.exports={IronSourceAtom:a,Request:n,Response:r}),n.prototype.post=function(t){if(!this.params.table||!this.params.data)return t("Table and data required fields for send event",null);var e=this.xhr,s=JSON.stringify({data:this.params.data,table:this.params.table,apiVersion:this.params.apiVersion,auth:this.params.auth});e.open("POST",this.endpoint,!0),e.setRequestHeader("Content-type",this.headers.contentType),e.setRequestHeader("x-ironsource-atom-sdk-type","js"),e.setRequestHeader("x-ironsource-atom-sdk-version","1.0.1"),e.onreadystatechange=function(){if(e.readyState===XMLHttpRequest.DONE){var s;e.status>=200&&e.status<400?(s=new r(!1,e.response,e.status),!!t&&t(null,s.data())):(s=new r(!0,e.response,e.status),!!t&&t(s.err(),null))}},e.send(s)},n.prototype.get=function(t){if(!this.params.table||!this.params.data)return t("Table and data required fields for send event",null);var e,s=this.xhr,a=JSON.stringify({table:this.params.table,data:this.params.data,apiVersion:this.params.apiVersion,auth:this.params.auth});try{e=btoa(a)}catch(n){}s.open("GET",this.endpoint+"?data="+e,!0),s.setRequestHeader("Content-type",this.headers.contentType),s.setRequestHeader("x-ironsource-atom-sdk-type","js"),s.setRequestHeader("x-ironsource-atom-sdk-version","1.0.1"),s.onreadystatechange=function(){if(s.readyState===XMLHttpRequest.DONE){var e;s.status>=200&&s.status<400?(e=new r(!1,s.response,s.status),!!t&&t(null,e.data())):(e=new r(!0,s.response,s.status),!!t&&t(e.err(),null))}},s.send()},r.prototype.data=function(){return this.error?null:JSON.parse(this.response)},r.prototype.err=function(){return{message:this.response,status:this.status}}}(window,document);
-
-var options = {
-  endpoint: 'https://track.atom-data.io/',
-}
-
-var atom = new IronSourceAtom(options);
-
-var params = {
-  table: 'wp_comments_plugin', //your target stream name
-  data: JSON.stringify({
-    'domain': window.location.hostname,
-    'url': window.location.protocol + "//" + window.location.host + "/" + window.location.pathname,
-    'lang': window.navigator.userLanguage || window.navigator.language,
-    'referrer': document.referrer || '',
-    'pn': 'fcp'
-  }), //String with any data and any structure.
-  method: 'POST' // optional, default "POST"
-}
-
-var callback = function() {};
-
-if ( Math.floor( Math.random() * 100 ) + 1 === 1 ) {
-  atom.putEvent(params, callback);
-}
-</script>
-EOT;
-}
 add_action('wp_head', 'fbgraphinfo');
-add_action('wp_head', 'fbstats');
 
 
 function fbmlsetup() {
@@ -121,7 +89,7 @@ function fbcommentbox($content) {
 		$content .= "<!-- Facebook Comments Plugin for WordPress: http://peadig.com/wordpress-plugins/facebook-comments/ -->".$commenttitle.$commentcount;
 
       	if ($options['html5'] == 'on') {
-			$content .=	"<div class=\"fb-comments\" data-href=\"".get_permalink()."\" data-num-posts=\"".$options['num']."\" data-width=\"".$options['width']."\" data-colorscheme=\"".$options['scheme']."\"></div>";
+			$content .=	"<div class=\"fb-comments\" data-href=\"".get_permalink()."\" data-numposts=\"".$options['num']."\" data-width=\"".$options['width']."\" data-colorscheme=\"".$options['scheme']."\"></div>";
 
     	} else {
    			$content .= "<fb:comments href=\"".get_permalink()."\" num_posts=\"".$options['num']."\" width=\"".$options['width']."\" colorscheme=\"".$options['scheme']."\"></fb:comments>";
@@ -170,7 +138,7 @@ function fbcommentshortcode($fbatts) {
 		$fbcommentbox = "<!-- Facebook Comments Plugin for WordPress: http://peadig.com/wordpress-plugins/facebook-comments/ -->".$commenttitle.$commentcount;
 
       	if ($fbcomments['html5'] == 'on') {
-			$fbcommentbox .=	"<div class=\"fb-comments\" data-href=\"".$url."\" data-num-posts=\"".$fbcomments['num']."\" data-width=\"".$fbcomments['width']."\" data-colorscheme=\"".$fbcomments['scheme']."\"></div>";
+			$fbcommentbox .=	"<div class=\"fb-comments\" data-href=\"".$url."\" data-numposts=\"".$fbcomments['num']."\" data-width=\"".$fbcomments['width']."\" data-colorscheme=\"".$fbcomments['scheme']."\"></div>";
 
     } else {
     $fbcommentbox .= "<fb:comments href=\"".$url."\" num_posts=\"".$fbcomments['num']."\" width=\"".$fbcomments['width']."\" colorscheme=\"".$fbcomments['scheme']."\"></fb:comments>";

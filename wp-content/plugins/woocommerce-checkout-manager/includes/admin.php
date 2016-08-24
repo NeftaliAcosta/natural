@@ -410,15 +410,15 @@ function wooccm_options_page() {
 		);
 
 		$shipping = array(
-			'country' => 'Country', 
-			'first_name' => 'First Name', 
-			'last_name' => 'Last Name', 
-			'company' => 'Company Name', 
-			'address_1' => 'Address', 
+			'country' => __( 'Country', 'woocommerce-checkout-manager' ), 
+			'first_name' => __( 'First Name', 'woocommerce-checkout-manager' ), 
+			'last_name' => __( 'Last Name', 'woocommerce-checkout-manager' ), 
+			'company' => __( 'Company Name', 'woocommerce-checkout-manager' ), 
+			'address_1' => __( 'Address', 'woocommerce-checkout-manager' ), 
 			'address_2' => '', 
-			'city' => 'Town/ City', 
-			'state' => 'State', 
-			'postcode' => 'Zip'
+			'city' => __( 'Town/ City', 'woocommerce-checkout-manager' ), 
+			'state' => __( 'State', 'woocommerce-checkout-manager' ), 
+			'postcode' => __( 'Zip', 'woocommerce-checkout-manager' )
 		);
 		$ship = 0;
 		foreach( $shipping as $name => $value ) {
@@ -474,17 +474,17 @@ function wooccm_options_page() {
 		}
 
 		$billing = array(
-			'country' => 'Country', 
-			'first_name' => 'First Name', 
-			'last_name' => 'Last Name', 
-			'company' => 'Company Name', 
-			'address_1' => 'Address', 
+			'country' => __( 'Country', 'woocommerce-checkout-manager' ), 
+			'first_name' => __( 'First Name', 'woocommerce-checkout-manager' ), 
+			'last_name' => __( 'Last Name', 'woocommerce-checkout-manager' ), 
+			'company' => __( 'Company Name', 'woocommerce-checkout-manager' ), 
+			'address_1' => __( 'Address', 'woocommerce-checkout-manager' ), 
 			'address_2' => '', 
-			'city' => 'Town/ City', 
-			'state' => 'State', 
-			'postcode' => 'Zip', 
-			'email' => 'Email Address', 
-			'phone' => 'Phone'
+			'city' => __( 'Town/ City', 'woocommerce-checkout-manager' ), 
+			'state' => __( 'State', 'woocommerce-checkout-manager' ), 
+			'postcode' => __( 'Zip', 'woocommerce-checkout-manager' ), 
+			'email' => __( 'Email Address', 'woocommerce-checkout-manager' ), 
+			'phone' => __( 'Phone', 'woocommerce-checkout-manager' )
 		);
 
 		$bill = 0;
