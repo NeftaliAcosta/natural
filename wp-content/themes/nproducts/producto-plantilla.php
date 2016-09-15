@@ -6,7 +6,7 @@
 
 
 
-<div class="container">
+<div class="mycontainer">
 <div id="myxs" class="hidden-xs"></div>
 <div class="row">
 			
@@ -15,7 +15,7 @@
 			<?php /*wp_nav_menu( array( 'menu' => 'Menu lateral' ) );*/?>
 			
 				<div id="MainMenu"> <!--Inicio menú-->
-				  <div class="list-group panel" >
+				  <div class="list-group panel" >  
 					<a href="#MateriasPrimas" id="Menu1" class="list-group-item list-group-item-success"  data-parent="#MainMenu"><img src="<?php bloginfo( 'template_url' ); ?>/imgs/mmp.png" class="img-responsive mp" ></a>
 						<div class="collapse" id="MateriasPrimas">
 							<a href="../acidulantes" class="list-group-item">Acidulantes</a>
@@ -26,7 +26,7 @@
 							<a href="../dextrosas" class="list-group-item">Dextrosas</a>
 							<a href="../endulcorantes" class="list-group-item">Endulcorantes</a>
 							<a href="../extractos" class="list-group-item ">Extractos</a>
-							<a href="../fibras" class="list-group-item">Fibras</a>
+							<a href="../fibras" class="list-group-item">Fibras</a> 
 							<a href="../grasas" class="list-group-item">Grasas</a>
 							<a href="../hidrocoloides" class="list-group-item ">Hidrocoloides</a>
 							<a href="../lacteos" class="list-group-item ">Lacteos</a>

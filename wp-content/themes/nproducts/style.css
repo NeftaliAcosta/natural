@@ -2,7 +2,7 @@
 Theme Name:         nProducts Theme
 Theme URI:          https://neftaliacosta.com/project/naturalproducts/
 Description:        Plantilla Wordpress a la medida para Naturalproducts.com.mx. Responsive Design + E-commerce Powered by ServiciosDinamicos.com.mx
-Version:            1.0
+Version:            2.6.
 Author:             Neftali Acota
 Author URI:         https://neftaliacosta.com
 Text Domain:        sage
@@ -254,7 +254,8 @@ li {list-style: none;}
 	
 		background-color: transparent!important;
 		color:#ffffff;
-}
+		width: 100%!important;
+} 
 
 
 .s {
@@ -540,7 +541,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
         background-repeat: no-repeat;
         background-size: cover;
 		
-        height: 300px;
+        height: auto;
         color: white;
 }
 .seccion3 p{
@@ -667,12 +668,24 @@ main{
     margin-top: 20px;
 }
 
-.dp-col img {
-    max-width: 50%!important; 
-    height: auto;
+
+
+ .dp-col img {
+    max-width: 100%!important;
+    height: 80%!important;
     border: 0;
     box-shadow: none;
 }
+@media (min-width: 544px) { 
+.dp-col img {
+    max-width: 100%;
+    height: 80%!important;
+    border: 0;
+    box-shadow: none;
+}
+} 
+ 
+
 .dp-sorter{
 	display:none!important;
 }
@@ -682,9 +695,15 @@ main{
 }
 
 .sintilla{
-	width:75%;
+	width:100%;
 	margin:0 auto;
 }
+@media only screen and (min-width : 480px) {
+	.sintilla{
+	width:115%!important;
+	margin:0 auto;
+}
+    }
 
 .dp-col {
     background: #FFFFFF!important;
@@ -744,16 +763,8 @@ mybuttom a{
 	 text-decoration:none!important;
  }
  
- .dp-col img {
-    max-width: 100%!important;
-    height: 200px!important;
-    border: 0;
-    box-shadow: none;
-}
 
-.dp-img-wrapper img {
-    width: 50%!important;
-}
+
 
 /*
 iframe{

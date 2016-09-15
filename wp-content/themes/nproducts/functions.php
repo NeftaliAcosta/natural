@@ -92,3 +92,12 @@ function mybirdsite_page_menu_args( $args ) {
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'mybirdsite_page_menu_args' ); 
+
+function add_estilos() {
+	wp_register_style( 'mystilecss', get_template_directory_uri() . '/style.css', false, NULL, 'all' );
+    wp_enqueue_style( 'mystilecss' );
+
+		
+	
+}
+add_action( 'wp_enqueue_scripts', 'add_estilos' );

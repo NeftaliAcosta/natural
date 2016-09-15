@@ -1,4 +1,3 @@
-
 	<?php 
 	
 	if ( is_singular( 'product' ) ) {
@@ -12,7 +11,7 @@
 			echo "</div>";
 			
 			echo "<div class='container ptienda'><br><br><br>" ;
-			echo "<img src='https://naturalproducts.com.mx/wp-content/themes/nproducts/imgs/CINTILLAn.png' class='img-responsive sintilla' ><br><br><br>";
+			echo "<img src='http://naturalproducts.com.mx/wp-content/themes/nproducts/imgs/CINTILLAn.png' class='img-responsive' ><br><br><br>";
 			echo "</div";
 
 			echo "<div class='container ptienda'>";
@@ -21,7 +20,7 @@
 			echo "</div>";
 			
 			echo "<div class='container ptienda'><br><br><br>" ;
-			echo "<img src='https://naturalproducts.com.mx/wp-content/themes/nproducts/imgs/CINTILLAd.png' class='img-responsive sintilla'><br><br><br>";
+			echo "<img src='http://naturalproducts.com.mx/wp-content/themes/nproducts/imgs/CINTILLAd.png' class='img-responsive'><br><br><br>";
 			echo "</div";
 			
 

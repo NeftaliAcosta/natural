@@ -21,8 +21,7 @@
 
  
 
-  <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/style.css">
-  
-     <script src="<?php bloginfo( 'template_url' ); ?>/js/jquery-1.12.3.min.js"></script>
+  <!--<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/style.css">-->
+  <script src="<?php bloginfo( 'template_url' ); ?>/js/jquery-1.12.3.min.js"></script>
 </head>
  
